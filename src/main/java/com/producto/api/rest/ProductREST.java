@@ -71,7 +71,9 @@ public class ProductREST {
 		Optional<Product> optionalProduct=productDAO.findById(product.getId());
 		if(optionalProduct.isPresent()) {
 			Product productupdate =optionalProduct.get();
-			productupdate.setV_nombreProducto(product.getV_nombreProducto());;
+			productupdate.setV_nombreProducto(product.getV_nombreProducto());
+			productupdate.setI_stockProducto(product.getI_stockProducto());
+			productupdate.setV_marcaProducto(product.getV_marcaProducto());
 			productDAO.save(productupdate);
 			return ResponseEntity.ok(productupdate);
 			
