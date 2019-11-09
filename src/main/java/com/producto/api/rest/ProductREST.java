@@ -27,8 +27,8 @@ public class ProductREST {
 	@Autowired
 	private ProductsDAO productDAO;
 	
-	/*@RequestMapping(value= "{productId}")
-	public ResponseEntity<Product> getProductById(@PathVariable("bhbhnb") Long productId) {
+	@RequestMapping(value= "{productId}")
+	public ResponseEntity<Product> getProductById(@PathVariable("productId") Long productId) {
 		
 		Optional<Product> optionalProduct=productDAO.findById(productId);
 		
@@ -38,7 +38,7 @@ public class ProductREST {
 		}else {
 		    return ResponseEntity.noContent().build();
 		}
-	}*/
+	}
 	
 	
 	@GetMapping
