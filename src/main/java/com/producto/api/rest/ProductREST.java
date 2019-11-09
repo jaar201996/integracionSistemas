@@ -33,8 +33,7 @@ public class ProductREST {
 		Optional<Product> optionalProduct=productDAO.findById(productId);
 		
 		if(optionalProduct.isPresent()) {
-			 String data = ResponseEntity.ok(optionalProduct.get());
-			 return "{\"data\":" + data + "}";
+			 return ResponseEntity.ok(optionalProduct.get());
 		}else {
 		    return ResponseEntity.noContent().build();
 		}
