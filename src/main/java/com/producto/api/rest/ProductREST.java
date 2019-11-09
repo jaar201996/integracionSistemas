@@ -28,7 +28,7 @@ public class ProductREST {
 	private ProductsDAO productDAO;
 	
 	@RequestMapping(value= "{productId}")
-	public ResponseEntity<Product> getProductById(@PathVariable("productId") Long productId) {
+	public ResponseEntity<Product> getProductById(@PathVariable("bhbhnb") Long productId) {
 		
 		Optional<Product> optionalProduct=productDAO.findById(productId);
 		
