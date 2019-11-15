@@ -82,6 +82,21 @@ public class ProductREST {
 		}
 	}
 	
+        @PutMapping(value= "{productId}")
+	public ResponseEntity<Product> actualizarProduct(@PathVariable("productId") Long productId,@RequestBody Product product) {
+		
+		Optional<Product> optionalProduct=productDAO.findById(productId);
+		if(optionalProduct.isPresent()) {
+			Product productupdate =optionalProduct.get();
+			productupdate.setI_stockProducto(product.getI_stockProducto());
+			productDAO.save(productupdate);
+			return ResponseEntity.ok(productupdate);
+			
+		}else {
+		    return ResponseEntity.notFound().build();
+		}
+	}
+	
 	
 
 }
